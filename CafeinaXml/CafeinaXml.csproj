@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{763D1CE3-B426-4989-8E3B-07583055FF0D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CafeinaXml</RootNamespace>
+    <AssemblyName>CafeinaXml</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>bin\Release\CafeinaXml.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CafeinaXmlException.cs" />
+    <Compile Include="GlobalSuppressions.cs" />
+    <Compile Include="XReflection\DataStructures\IStructureVerifier.cs" />
+    <Compile Include="XReflection\DataStructures\Reflection\ListReflected.cs" />
+    <Compile Include="XReflection\DataStructures\Reflection\ListReflection.cs" />
+    <Compile Include="XReflection\DataStructures\Structures\ListStructure.cs" />
+    <Compile Include="XReflection\DataStructures\StructureClassifier.cs" />
+    <Compile Include="XReflection\DataStructures\Structure.cs" />
+    <Compile Include="XReflection\GenericsReflection.cs" />
+    <Compile Include="XReflection\ReflectedEntity.cs" />
+    <Compile Include="XReflection\ReflectedProperty.cs" />
+    <Compile Include="ExtendedXml.cs" />
+    <Compile Include="XReflection\EntityReflection.cs" />
+    <Compile Include="MetaXmlAttribute.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="XReflection\DataStructures\Structures\SingleStructure.cs" />
+    <Compile Include="XSerializer\Cafeinalizer.cs" />
+    <Compile Include="XSerializer\Casts.cs" />
+    <Compile Include="XmlDataContext.cs" />
+    <Compile Include="XmlFile.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XmlInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="XSerializer\Decafeinalizer.cs" />
+    <Compile Include="XmlValidator.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

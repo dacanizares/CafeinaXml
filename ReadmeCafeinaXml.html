@@ -1,0 +1,244 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Cafeina Xml</title>
+    <style type="text/css">
+        html
+        {
+            height: 100%;
+        }
+
+        body 
+        {
+            margin: 0;
+            height: 100%;
+            color: #555;
+            background-color: #F2F2F2;    
+            font-family: Segoe UI, Verdana;     
+            font-weight: normal;   
+            text-align: justify;
+        }
+    
+        h1
+        {
+            color: #0071BC;
+            font-size: 18pt;
+            margin: 0;
+            font-weight: normal;
+        }
+
+        hr
+        {
+            border: 1px solid #E6E6E6;
+        }
+
+        #page
+        {   
+            margin: 0 auto 0 auto;
+            /* Size */
+            width: 910px;       
+            min-height: 100%;           /* IE6 WILL IGNORE THIS */
+            height: auto !important;    /* IE6 WILL IGNORE THIS */
+            height: 100%;               /* IE6 */
+            /* End-Size */
+            overflow: hidden;
+            background-color: #FFF;
+            padding: 25px;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="page">
+        <h1>CAFEINA XML</h1>
+        <hr />
+        <br />
+        Cafeina Xml is a Microsoft.Net library that allows you to easily persist entities in the globally supported Xml standard.
+        It brings you a fast way to serialize, store and restore your objects with less code-lines than you ever seen.
+        It's user friendly and you don't need to create data enviroments in order to deploy your app, Cafeina Xml will
+        do everything for you.<br /><br />
+        Cafeina Xml will not replace a DBMS in some enviroments like heavily transactional ones, but it will help you in too many
+        cases to quickly create and deploy any kind of applications in web or desktop enviroments.<br /><br />
+        The next version we are preparing, will include features to improve multi-user access and tons of cool things that you'll love.
+        While we finish it, try this version of Cafeina Xml and be amazed of its easiness and power.<br /><br />
+        Less Sql, more fun, happy Computing!<br /><br />
+        Cafeina Team.
+        <br />
+        <br />
+        <br />
+        <h1>VERSION HISTORY</h1>
+        <hr />
+        <br />
+        <strong>RELEASE CANDIDATE (RC)</strong>
+        <h1>VERSION 0.4.0</h1>
+        01/10/2012
+        <br />
+
+        NEWS
+        <ul>            
+            <li>Now you can define Lists of entities or native types (int, string...)!</li>
+	        <li>Now you can define Entities as properties to save!</li>
+	        <li>Now you can save entities without Unique or Identity attributes (Save method)!</li>
+            <li>Unique type is now supported!</li>
+            <li>CFXML1.0 is the new representation standard and it will be published soon</li>
+	        <li>To save validating Unique or Identity attributes use Insert or Update methods</li>
+	        <li>Simplified xml representation removing attributes from file</li>
+	        <li>PrimaryKey extended method removed, just use Property extended method</li>
+	        <li>You can change keys in your entities without any modification*</li>
+	        <li>Improved entities validation</li>
+	        <li>Added data-strutures reflection</li>
+            <li>Key attribute renamed as MetaXmlAttribute (You can use it as MetaXml)</li>
+            <li>Most of CafeinaXml is Microsoft Code Analysis All Rules complaining</li>
+	        <li>Library partially redesigned to support future improvements</li>
+        </ul>
+        FIXES
+        <ul>
+            <li>Failed insert or update is now informed</li>
+        </ul>
+        PENDING 
+        <ul>
+            <li>Lists of Lists currently unsopported</li>
+            <li>Validate version of the file</li>
+        </ul>
+        BUGS
+       <ul>
+            <li>When Xml file exists but is empty library crashes</li>
+        </ul>
+	    <br /><br />
+
+
+        <strong>BETA 2 PATCH 1</strong>
+        <h1>VERSION 0.3.1</h1>
+        24/06/2012<br />
+        <br />
+        FIXED
+        <ul>
+        	<li>Uncomplete xml entities will partially load instead of throw and exception</li>
+        </ul>
+
+        <br /><br />
+
+        <strong>BETA 2</strong>
+        <h1>VERSION 0.3.0</h1>
+        26/04/2012
+        <br />
+        <br />
+        NEWS
+        <ul>
+            <li>Added extended method string Property(Object) and PrimaryKey(Object) to XElement in order 
+	          to improve DAL sintax <br /> (For more information see the official Demo)</li>
+            <li>XmlDatacontext GetEntities method renamed as GetElement to clarify sintax</li>
+        </ul>
+        PENDING 
+        <ul>
+            <li>Unique type is created but currently unsopported</li>
+            <li>Validations on insert, update and delete for Unique type</li>
+            <li>NotNull properties aren't supported</li>
+        </ul>
+        BUGS    
+        <ul>
+            <li>Failed insert or update isn't informed (In revision)</li>
+        </ul>
+
+        <br /><br />
+
+        <strong>BETA</strong>
+        <h1>VERSION 0.2.0</h1>
+        21/02/2012
+        <br />
+        <br />
+        NEWS
+        <ul>
+           <li>Reflection basic caching system to improve performance</li>
+            <li>InsertOrUpdate method separated on Insert and Update methods</li>
+            <li>DAL sytax is now easier than before</li>
+            <li>XmlDatacontext is now the main-entry for all operations</li>
+            <li>Attribute IdentifierAttribute renamed as PrimaryKey</li>
+            <li>IdentifierType (Unique, Identity) renamed as PropertyType (Normal, Identity, Unique)</li>
+            <li>Library internally redesigned</li>
+        </ul>
+        PENDING 
+        <ul>
+            <li>Unique type is created but currently unsopported</li>
+            <li>Validations on insert, update and delete for Unique type</li>
+            <li>NotNull properties aren't supported</li>
+        </ul>
+        BUGS    
+        <ul>
+            <li>Failed insert or update isn't informed</li>
+        </ul>
+
+        <br /><br />
+
+        <strong>ALPHA</strong>
+        <h1>VERSION 0.1.0</h1>
+        28/09/2011
+        <br />
+        <br />
+        PENDING 
+        <ul>
+            <li>Only identity type allowed</li>
+        </ul>
+        BUGS    
+        <ul>
+            <li>No known bugs</li>
+        </ul>
+
+        <br />
+        <br />
+        <br />
+
+        <h1>COMPATIBILITY ISSUES</h1>
+        <hr />
+        <br />
+        <h1>Why are there so many compatibility issues between versions?</h1>
+        <br />
+        Currently, Cafeina Xml it's on beta testing and some many things are changing to bring you the best developing experience. On future stable releases don't expect to many issues.
+        <br /><br />
+        <strong>RC</strong>
+        <h1>VERSION 0.4.x</h1>
+        <br />
+        This version makes little changes in Xml representation and code syntax. Compatibility issues with older versions.
+        <br /><br />
+        <strong>BETA 2</strong>
+        <h1>VERSION 0.3.x</h1>
+        <br />
+        This version makes little changes in code syntax. Small compatibility issues with older versions. There are no Xml issues.
+        <br /><br />
+        <strong>BETA</strong>
+        <h1>VERSION 0.2.x</h1>
+        <br />
+        Compatibility issues with oldest version.
+        <br />
+        <br />
+        <br />
+        <br />
+        <h1>LICENCE</h1>
+        <hr />
+        <br />
+        <strong>YOU ARE FREE TO<br />
+        Use this software with your free or commercial products without any charge.<br />
+        YOU CANNOT<br />
+        Create derivatives or modify this Software.
+        </strong>
+        <br />
+        <br />
+        Copyright © 2012 Cafeina Softworks
+        <br />
+        <br />
+        Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software with some restrictions, including reverse engineering, decompilation, derivation, modification, sublicense, reselling or any other activity that could affect the Software avalability, stability or integrity.
+        <br /><br />
+        There are authorized the rights to use, copy, embed and distribute the Software with free or commercial products, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+        <br /><br />
+        The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+        <br /><br />
+        THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+        <br />
+        <br />
+        <br />
+        Cafeina Softworks 2012.
+    </div>
+</body>
+</html>
