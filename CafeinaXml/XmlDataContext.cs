@@ -18,7 +18,7 @@ namespace CafeinaXml
     /// </summary>
     public class XmlDataContext : IDisposable
     {
-        private XmlInfo Info;
+        private XmlFile XmlFile;
 
         private XDocument Document;
         
@@ -38,7 +38,7 @@ namespace CafeinaXml
         /// Loads a XElement as a T entity
         /// </summary>
         /// <typeparam name="T"></typeparam>
-        /// <param name="element"></param>
+        /// <param name="e"></param>
         /// <returns></returns>
         public T Load<T>(XElement element) where T : new()
         {
@@ -46,6 +46,23 @@ namespace CafeinaXml
                 throw new CafeinaXmlException("element can not be null in order to load it");
             Decafeinalizer<T> decafeinalizer = new Decafeinalizer<T>();
             return decafeinalizer.Decafeinalize(element);
+        }
+
+        /// <summary>
+        /// Loads all T entities
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="e"></param>
+        /// <returns></returns>
+        public List<T> Load<T>() where T : new()
+        {
+            Decafeinalizer<T> decafeinalizer = new Decafeinalizer<T>();
+            List<T> entities = new List<T>();
+            foreach (var element in this.GetElements<T>())
+            {
+                entities.Add(decafeinalizer.Decafeinalize(element));
+            }
+            return entities;
         }
 
         /// <summary>
@@ -60,7 +77,7 @@ namespace CafeinaXml
             Type type = entity.GetType();
 
             // Get Xml element ROOT
-            XElement xmlElement = Document.Element(Info.RootElement);  
+            XElement xmlElement = Document.Element(this.XmlFile.ROOT_ELEMENT);  
                                    
             // Add element
             if (xmlElement.Element(type.Name) == null)
@@ -74,7 +91,7 @@ namespace CafeinaXml
             xmlElement.Element(type.Name).Add(cafeinalizer.Cafeinalize(entity, "Entity"));                
 
             // Save
-            Document.Save(Info.FullPath);
+            Document.Save(this.XmlFile.FullPath);
            
         }
 
@@ -145,9 +162,26 @@ namespace CafeinaXml
 
             // Remove and save
             element.Remove();
-            Document.Save(Info.FullPath);
+            Document.Save(this.XmlFile.FullPath);
         }
-        
+
+        /// <summary>
+        /// Deletes all entities of sended type
+        /// </summary>
+        /// <param name="type"></param>
+        public void DeleteAll(Type type)
+        {
+            // Get Xml element ROOT
+            XElement xmlElement = Document.Element(this.XmlFile.ROOT_ELEMENT);  
+                                   
+            if (xmlElement.Element(type.Name) != null)
+            {
+                xmlElement.Element(type.Name).Remove();
+            }
+
+            Document.Save(this.XmlFile.FullPath);
+        }
+
         /// <summary>
         /// Starts a Xml datacontext for client enviroments
         /// </summary>
@@ -155,10 +189,10 @@ namespace CafeinaXml
         /// <param name="file">Xml file. Example: "Users" (.xml not required)</param>
         public XmlDataContext(string path, string file)
         {
-            Info = new XmlInfo();
-            Info.Init(path, file);
+            this.XmlFile = new XmlFile();
+            this.XmlFile.Init(path, file);
 
-            Document = XmlFile.Open(Info);
+            Document = XmlFile.Open();
         }
 
         /// <summary>
@@ -169,15 +203,12 @@ namespace CafeinaXml
         /// <param name="appPath">Web application path. PLEASE SEND -AppDomain.CurrentDomain.BaseDirectory- FROM YOUR MAIN PROJECT</param>
         public XmlDataContext(string path, string file, string appPath)
         {
-            Info = new XmlInfo();
-            Info.Init(appPath + path, file);
+            this.XmlFile = new XmlFile();
+            this.XmlFile.Init(appPath + path, file);
 
-            Document = XmlFile.Open(Info);
+            Document = XmlFile.Open();
         }
 
-        /// <summary>
-        /// Dispose
-        /// </summary>
         public void Dispose()
         {  }
     }

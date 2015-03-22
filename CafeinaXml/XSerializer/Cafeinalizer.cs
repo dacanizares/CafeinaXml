@@ -74,38 +74,3 @@ namespace CafeinaXml.XSerializer
         }
     }
 }
-
-
-/***
-public XElement Cafeinalize(object obj, string name)
-        {
-            ReflectedEntity reflectedEntity = EntityReflection.GetProperties(obj.GetType());
-
-            XElement xElement = new XElement(name);
-
-            foreach (var reflectedProperty in reflectedEntity.ReflectedProperties)
-            {
-                
-                Structure structure = reflectedProperty.Structure;
-
-                if (structure.StructureType == StructureType.Single)
-                {
-                    xElement.SetElementValue(reflectedProperty.PropertyInfo.Name,
-                                            Casts.ToSave(obj, reflectedProperty));                    
-                }
-                else if (structure.StructureType == StructureType.List)
-                {
-                    Cafeinalist(reflectedProperty.PropertyInfo.GetValue(obj, null));                    
-                }
-                else
-                {
-                    xElement.Add(
-                        Cafeinalize(reflectedProperty.PropertyInfo.GetValue(obj, null),
-                                    reflectedProperty.PropertyInfo.Name));
-                        
-                }
-
-            }
-
-            return xElement;
-        }*/

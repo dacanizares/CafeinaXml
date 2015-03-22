@@ -20,6 +20,7 @@ namespace CafeinaXml
         /// Validate insert conditions and prepares identity properties.
         /// </summary>
         /// <param name="entity"></param>
+        /// <param name="properties"></param>
         /// <param name="document"></param>
         /// <param name="type"></param>
         /// <returns></returns>
@@ -58,6 +59,7 @@ namespace CafeinaXml
         /// Returns entity's XElement to update
         /// </summary>
         /// <param name="entity"></param>
+        /// <param name="properties"></param>
         /// <param name="document"></param>
         /// <param name="type"></param>
         /// <returns></returns>

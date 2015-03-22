@@ -23,9 +23,6 @@ namespace CafeinaXml
     {
         private PropertyType _PropertyType;
 
-        /// <summary>
-        /// PropertyType
-        /// </summary>
         public PropertyType PropertyType
         {
             get { return _PropertyType; }
@@ -42,7 +39,7 @@ namespace CafeinaXml
         /// <summary>
         /// Sets a Key
         /// </summary>
-        /// <param name="propertyType">KeyType</param>
+        /// <param name="keyType">KeyType</param>
         public MetaXmlAttribute(PropertyType propertyType)
         {
             if (propertyType == PropertyType.None)

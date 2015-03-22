@@ -59,7 +59,7 @@ namespace CafeinaXml.XReflection
         /// <summary>
         /// Validates a reflections
         /// </summary>
-        /// <param name="reflectedProperties"></param>
+        /// <param name="reflectedEntity"></param>
         public static PropertyType ValidateKey(List<ReflectedProperty> reflectedProperties)
         {
             int identityProps = reflectedProperties.Where(p => p.PropertyType == PropertyType.Identity).Count();

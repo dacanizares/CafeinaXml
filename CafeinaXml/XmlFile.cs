@@ -10,6 +10,11 @@ namespace CafeinaXml
     internal class XmlFile
     {
         /// <summary>
+        /// Xml root element
+        /// </summary>
+        public string ROOT_ELEMENT = "CafeinaXml";
+        
+        /// <summary>
         /// File directory
         /// </summary>
         public string Path { get; set; }
@@ -18,12 +23,7 @@ namespace CafeinaXml
         /// Filename
         /// </summary>
         public string Filename { get; set; }
-
-        /// <summary>
-        /// Xml root element (node)
-        /// </summary>
-        public string RootElement { get; set; }
-
+        
         /// <summary>
         /// (Auto) Fullpath
         /// </summary>
@@ -33,7 +33,6 @@ namespace CafeinaXml
         {
             Path = path;
             Filename = file;
-            RootElement = "CafeinaXml";
             FullPath = path + file + ".xml";
         }
 
@@ -42,22 +41,24 @@ namespace CafeinaXml
         /// </summary>
         /// <param name="info">File info</param>
         /// <returns>XDocument</returns>
-        public static XDocument Open(XmlInfo info)
+        public XDocument Open()
         {
             //Verify if file exists
-            if (false == File.Exists(info.FullPath))
+            if (false == File.Exists(this.FullPath))
             {
-                Create(info.Path, info.FullPath);
+                Create(this.Path, this.FullPath);
             }
 
-            return XDocument.Load(info.FullPath);
+            return XDocument.Load(this.FullPath);
         }
 
         /// <summary>
         /// Creates an Xml file
         /// </summary>
         /// <param name="path"></param>
+        /// <param name="file"></param>
         /// <param name="fullpath"></param>
+        /// <param name="rootElement"></param>
         private static void Create(string path, string fullpath)
         {
             //Create files and directories
@@ -73,7 +74,7 @@ namespace CafeinaXml
             xmlDoc.Save(fullpath);
         }
 
-        private XmlFile()
+        public XmlFile()
         { }
     }
 }

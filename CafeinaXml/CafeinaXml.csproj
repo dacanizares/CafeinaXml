@@ -12,6 +12,7 @@
     <AssemblyName>CafeinaXml</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -21,6 +22,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -30,6 +32,7 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
     <DocumentationFile>bin\Release\CafeinaXml.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup>
@@ -69,9 +72,6 @@
     <Compile Include="XSerializer\Casts.cs" />
     <Compile Include="XmlDataContext.cs" />
     <Compile Include="XmlFile.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="XmlInfo.cs">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="XSerializer\Decafeinalizer.cs" />
