@@ -11,7 +11,6 @@ Universidad Católica de Oriente.
 
 # Readme
 
-```html
 Cafeina Xml is a Microsoft.Net library that allows you to easily persist entities in the globally supported Xml standard.
 It brings you a fast way to serialize, store and restore your objects with less code-lines than you ever seen.
 It's user friendly and you don't need to create data enviroments in order to deploy your app, Cafeina Xml will
@@ -168,4 +167,3 @@ This version makes little changes in code syntax. Small compatibility issues wit
 <h1>VERSION 0.2.x</h1>
 <br />
 Compatibility issues with oldest version.
-```
