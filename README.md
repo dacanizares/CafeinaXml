@@ -1,13 +1,11 @@
 # CafeinaXml
 
+By Daniel Cañizares Corrales
+
 This was my try to create a .Net library to persist entities using xml files.
 
 It was useful for me in some desktop projects but the library hasn't been updated for so long. 
 I made this as a student, but I hope that someone will find something helpful inside it.
-
-Daniel Cañizares Corrales.
-
-Universidad Católica de Oriente.
 
 # Readme
 
@@ -34,9 +32,9 @@ Cafeina Team.
 
 NEWS
 <ul>            
-	<li>Now you can define Lists of entities or native types (int, string...)!</li>
-	<li>Now you can define Entities as properties to save!</li>
-	<li>Now you can save entities without Unique or Identity attributes (Save method)!</li>
+	<li>New! you can define Lists of entities or native types (int, string...)!</li>
+	<li>New! you can define Entities as properties to save!</li>
+	<li>New! you can save entities without Unique or Identity attributes (Save method)!</li>
 	<li>Unique type is now supported!</li>
 	<li>CFXML1.0 is the new representation standard and it will be published soon</li>
 	<li>To save validating Unique or Identity attributes use Insert or Update methods</li>
@@ -55,7 +53,7 @@ FIXES
 </ul>
 PENDING 
 <ul>
-	<li>Lists of Lists currently unsopported</li>
+	<li>Lists of Lists currently unsupported</li>
 	<li>Validate version of the file</li>
 </ul>
 BUGS
